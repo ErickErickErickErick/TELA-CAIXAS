@@ -35,11 +35,117 @@
 
       <div class="center-body">
         <div class="filter">FILTRO <img src="seta.png" width="15px"> </div>
+
+        <!-- Control buttons -->
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('Todos')"> Mostrar Todos</button>
+  <button class="btn" onclick="filterSelection('Japonesa')"> Comida Japonesa </button>
+  <button class="btn" onclick="filterSelection('Méxica')"> Comida Mexicana </button>
+  <button class="btn" onclick="filterSelection('Brasileira')"> Comida Brasileira </button>
+  <button class="btn" onclick="filterSelection('Árabe')"> Comida Árabe </button>
+</div>
+<!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+<div class="container">
+  <div class="filterDiv Árabe"> Falafel </div>
+  <div class="filterDiv Mexicana">Orange</div>
+  <div class="filterDiv Japonesa">Volvo</div>
+  <div class="filterDiv Brasileira">Red</div>
+  <div class="filterDiv Árabe">Ford</div>
+  <div class="filterDiv Mexicana">Blue</div>
+  <div class="filterDiv aJaponesa">Cat</div>
+  <div class="filterDiv Brasileira">Dog</div>
+  <div class="filterDiv fruits">Melon</div>
+  <div class="filterDiv fruits animals">Kiwi</div>
+  <div class="filterDiv fruits">Banana</div>
+  <div class="filterDiv fruits">Lemon</div>
+  <div class="filterDiv animals">Cow</div>
+</div>
+
+
+        <div class="slideshow-container">
+
+          <div class="mySlides fade">
+            <div class="small_box">
+    
+            </div>
+            <div class="description">Caixa Pequena:...</div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="medium_box">
+             
+            </div>
+            <div class="description"> Caixa Média:...</div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="large_box">
+              
+            </div>
+            <div class="description"> Caixa Grande:...</div>
+          </div>
+
+        
+
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+          
+          </div>
+          <br>
+          
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+
       </div>
 
       <div class="hollow_space2"></div>
     </div>
 
 </body>
-<script src="CAIXAS.js"></script>
+<script> 
+
+function replaceName(image)
+{
+    namejs.src=image;
+}
+function replaceCart(image)
+{
+    cart.src=image;
+}
+function replaceProfile(image)
+{
+    profile.src=image;
+}
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
 </html>
