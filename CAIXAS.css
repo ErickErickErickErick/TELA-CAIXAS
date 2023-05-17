@@ -32,6 +32,7 @@ body {
     justify-content: space-between;
     margin-top: 20px;
     opacity: 0;
+    pointer-events: none;
 }
  
 .shopping-cart_space{
@@ -68,63 +69,69 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    align-items: left;
+    float:left;
     margin-top: 50px;
 }
-.filter
-{
-    width: 120px;
-    height: 30px;
-    background-color: #E6852B;
-    color: black;
-    border-radius: 10px;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
 
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+/* Dropdown Button */
+.dropbtn {
+  background-color: #E6852B;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
 }
-.container {
-    overflow: hidden;
-  }
-  
-  .filterDiv {
-    float: left;
-    background-color: #2196F3;
-    color: #ffffff;
-    width: 100px;
-    line-height: 100px;
-    text-align: center;
-    margin: 2px;
-    display: none; /* Hidden by default */
-  }
-  
-  /* The "show" class is added to the filtered elements */
-  .show {
-    display: block;
-  }
-  
-  /* Style the buttons */
-  .btn {
-    border: none;
-    outline: none;
-    padding: 12px 16px;
-    background-color: #f1f1f1;
-    cursor: pointer;
-  }
-  
-  /* Add a light grey background on mouse-over */
-  .btn:hover {
-    background-color: #ddd;
-  }
-  
-  /* Add a dark background to the active button */
-  .btn.active {
-    background-color: #666;
-    color: white;
-  }
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #de9c5e;
+}
+
+/* The search field */
+#myInput {
+  box-sizing: border-box;
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+/* The search field when it gets focus/clicked on */
+#myInput:focus {outline: 3px solid #ddd;}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
 
 .mySlides {display: none}
 img {vertical-align: middle;}
@@ -133,7 +140,7 @@ img {vertical-align: middle;}
     max-width: 1000px;
     position: relative;
     margin: auto;
-    margin-bottom: 300px;
+    margin-bottom: 250px;
   }
   
   /* Next & previous buttons */
@@ -163,11 +170,11 @@ img {vertical-align: middle;}
     background-color: rgba(0,0,0,0.8);
   }
   .description {
-    color: #000000;
-    font-size: 15px;
+    color: #dddddd;
+    font-size: 25px;
     padding: 8px 12px;
     position: absolute;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     width: 100%;
     text-align: center;
   }
@@ -187,43 +194,13 @@ img {vertical-align: middle;}
     .prev, .next,.text {font-size: 11px}
   }
 
-.small_box
-{
-    width: 400px;
-    height: 300px;
-    background-color: #E6852B;
-    border-radius: 10px;
+
+#grad {
+    background-image: linear-gradient(to right, rgb(170, 93, 20), rgb(230, 133, 43));
+    width: 500px;
+    height: 400px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-}  
-.medium_box
-{
-    width: 400px;
-    height: 300px;
-    background-color: #E6852B;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}  
-.large_box
-{
-    width: 400px;
-    height: 300px;
-    background-color: #E6852B;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}  
-.promotion
-{
-    width: 200px;
-    height: 100px;
-    background-color: #E6852B;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}  
+}
