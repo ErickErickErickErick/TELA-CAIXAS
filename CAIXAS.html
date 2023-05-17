@@ -11,7 +11,9 @@
     <div class="div-aba_superior">
          <div class="hollow_space"></div>
          <div class="name_space">
-            <img src="name.png" width="200px">
+          <a href="../MYSTERYFOOD/tela-principal.html">
+            <img onmouseleave="replaceName('name.png');" onmouseover="replaceName('name-mouse.png');" src="name.png" id="namejs" width="200px">
+          </a>
         </div>
 
         <div class="buttons_space">
@@ -34,55 +36,49 @@
         <div class="hollow_space2"></div>
 
       <div class="center-body">
-        <div class="filter">FILTRO <img src="seta.png" width="15px"> </div>
-
+        <div class="filter"> 
         <!-- Control buttons -->
-<div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('Todos')"> Mostrar Todos</button>
-  <button class="btn" onclick="filterSelection('Japonesa')"> Comida Japonesa </button>
-  <button class="btn" onclick="filterSelection('Méxica')"> Comida Mexicana </button>
-  <button class="btn" onclick="filterSelection('Brasileira')"> Comida Brasileira </button>
-  <button class="btn" onclick="filterSelection('Árabe')"> Comida Árabe </button>
-</div>
-<!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
-<div class="container">
-  <div class="filterDiv Árabe"> Falafel </div>
-  <div class="filterDiv Mexicana">Orange</div>
-  <div class="filterDiv Japonesa">Volvo</div>
-  <div class="filterDiv Brasileira">Red</div>
-  <div class="filterDiv Árabe">Ford</div>
-  <div class="filterDiv Mexicana">Blue</div>
-  <div class="filterDiv aJaponesa">Cat</div>
-  <div class="filterDiv Brasileira">Dog</div>
-  <div class="filterDiv fruits">Melon</div>
-  <div class="filterDiv fruits animals">Kiwi</div>
-  <div class="filterDiv fruits">Banana</div>
-  <div class="filterDiv fruits">Lemon</div>
-  <div class="filterDiv animals">Cow</div>
-</div>
+          <button onclick="clickBtn()" class="dropbtn">FILTRO</button>
+          <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href="#Filtro1"> Filtro 1 </a>
+            <a href="#Filtro2"> Filtro 2</a>
+          </div>
+      </div>
 
 
         <div class="slideshow-container">
 
           <div class="mySlides fade">
-            <div class="small_box">
-    
+            <div id="grad">
+
+                  <a href="caixagpequena.html">
+                    <img onmouseleave="replaceBox('caixa.png');" onmouseover="replaceBox('caixa-mouse.png');" src="caixa.png" id="box" width="250px">
+                  </a>
+
             </div>
-            <div class="description">Caixa Pequena:...</div>
+            <div class="description">Caixa Pequena</div>
           </div>
           
           <div class="mySlides fade">
-            <div class="medium_box">
-             
+
+            <div id="grad">
+                  <a href="caixamedia.html">
+                    <img onmouseleave="replaceBox('caixa.png');" onmouseover="replaceBox('caixa-mouse.png');" src="caixa.png" id="box" width="290px">
+                  </a>
             </div>
-            <div class="description"> Caixa Média:...</div>
+            <div class="description"> Caixa Média</div>
           </div>
           
           <div class="mySlides fade">
-            <div class="large_box">
-              
+            <div id="grad">
+
+                  <a href="caixagrande.html">
+                    <img onmouseleave="replaceBox('caixa.png');" onmouseover="replaceBox('caixa-mouse.png');" src="caixa.png" id="box" width="370px">
+                  </a>
+
             </div>
-            <div class="description"> Caixa Grande:...</div>
+            <div class="description"> Caixa Grande</div>
           </div>
 
         
@@ -105,47 +101,5 @@
     </div>
 
 </body>
-<script> 
-
-function replaceName(image)
-{
-    namejs.src=image;
-}
-function replaceCart(image)
-{
-    cart.src=image;
-}
-function replaceProfile(image)
-{
-    profile.src=image;
-}
-
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
-
-</script>
+<script src="CAIXAS.js"></script>
 </html>
